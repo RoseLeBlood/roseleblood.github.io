@@ -8,7 +8,7 @@ title: OpenESS Project Page
  <div align="left">
   <h1>Open Embedded Sound Server</h1>
    <h3>
-       Website
+       
      <a href="https://roseleblood.github.io/">Website</a>
      <span> | </span>
      <a href="https://github.com/RoseLeBlood/openess/wiki">
