@@ -1,97 +1,147 @@
 ---
 layout: page
-title: Bootstrap 4 Github Pages
+title: OpenESS Project Page
 ---
 
-A [Bootstrap 4](https://getbootstrap.com/) start up project for [Github Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
+<div>
+ <img src="https://roseleblood.github.io/openess/Logo-OpenESS.png" width="256" align="left"> 
+ <div align="left">
+  <h1>Open Embedded Sound Server</h1>
+   <h3>
+       Website
+     </a>
+     <span> | </span>
+     <a href="https://github.com/RoseLeBlood/openess/wiki">
+       Wiki
+     </a>
+     <span> | </span>
+     <a href="https://github.com/RoseLeBlood/openess/blob/master/CONTRIBUTING.md">
+       Contributing
+     </a>
+     <span> | </span>
+     <a href="https://roseleblood.github.io/openess/html/d3/dcc/md__r_e_a_d_m_e.html">
+       Documentation
+     </a>
+     <span> | </span>
+     <a href="https://webchat.freenode.net/?channels=openess">
+       Chat
+     </a>
+   </h3>
+   
+ </div>
+ 
+</div>
 
-* A full Bootstrap 4 theme usable both on Github Pages and with a standalone Jekyll.
-* Recompiles Bootstrap from SCSS files, which allows to customize Bootstrap's variables and use Bootstrap themes.
-* Full support of Bootstrap's JavaScript plugins.
-* Supports all features of Github Pages and Jekyll.
+**OpenESS**  is a network-capable sound server libary mainly for embedded systems and other operatins systems. 
+OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
 
-## Setup Guide
+## Getting Started
 
-### Fork this repository
+### Setting Up Development Environment
 
-[Go to this repository page on Github](https://github.com/nicolas-van/bootstrap-4-github-pages) and click the `Fork` button on the top right of the page.
+#### PlatformIO
 
-### Rename your forked repository
+OpenESS is made for use with [platformio](http://platformio.org/), an advanced ecosystem for microcontroller
+development. To get started with coding esphomelib applications, you first have to 
+[install the atom-based platformio IDE](http://platformio.org/platformio-ide) or for advanced users, 
+[install the command line version of platformio](http://docs.platformio.org/en/latest/installation.html).
 
-Here we have two possibilities:
+Then create a new project for an [ESP32-based board](http://docs.platformio.org/en/latest/platforms/espressif32.html#boards)
+(for example, `nodemcu-32s`). Then open up the newly created `platformio.ini` file and insert
 
-* **You want a user or organization website**
+```ini
+; ...
+platform = espressif32
+board = nodemcu-32s
+framework = esp-idf
+lib_deps = openess
+```
+Finally, create a new source file in the `src/` folder (for example `main.c`) and start coding with openess.
 
-  In this case your website's URL will be `http://<your username>.github.io` where `<your username>` is your Github user name.
+## Usage example
+_create the server_ 
+```c
+#include "ess.h"
+#include "ess_backend.h"
+#include "ess_context.h"
+#include "ess_format.h"
 
-  Go in the `Settings` page of your repository and rename it to `<your username>.github.io`.
 
-* **You want a project website**
 
-  In this case your website's URL will be `http://<your username>.github.io/<whatever you want>` where `<whatever you want>` can be any valid name for a Github repository.
+ess_context_t context;
+ess_backend_facktory_t* backend_list;
 
-  Go in the `Settings` page of your repository and rename it to `<whatever you want>`.
+extern "C" void app_main() {
 
-### Activate Github Pages on your repository
+  //WORK IN PROGRESSS
 
-Go in the `Settings` page of your repository, in the `Github Pages`, under the `Source` parameter, choose `master branch` then `Save`.
 
-### That's it
+  for(;;) { usleep(100000); }
+}
 
-Your Github Pages website with customizable Bootstrap 4 is now up and running, you can access it using the URL displayed by Github in the `Github Pages` settings.
 
-## Customization Guide
+```
+_create the audio context_ 
+```cpp
+#include "ess.h"
+#include "ess_backend.h"
+#include "ess_context.h"
+#include "ess_format.h"
 
-### Modify the configuration
 
-You should at least edit the `_config.yml` file to edit your website's metadata, like the title, description and repository URL.
 
-### Customize your theme
+ess_context_t context;
+ess_backend_facktory_t* backend_list;
 
-Let's be honest, this theme uses a vanilla version of Bootstrap 4 and an unmodified Bootstrap is quite unpleasant to the eye. You want to change that.
+extern "C" void app_main() {
+  backend_list =ess_backend_create_factory_list();
 
-You can of course modify anything in the `_includes`, `_layouts` and `_sass` folders to customize both the HTML or CSS of your website, possibly referring to the [Bootstrap documentation](https://getbootstrap.com/) or the [Jekyll documentation](https://jekyllrb.com/) when needed. This is a normal part of web development and it is outside the scope of this guide.
+  ess_backend_probe_all(ESS_FORMAT_STEREO_96000_24,  &backend_list);
+  ess_context_create(&context, ESS_FORMAT_STEREO_96000_24);
+  ess_context_init_ex(&context, &backend_list[0]);
 
-But if you don't know where to start I can recommend you to import a starting theme from [Bootswatch](https://bootswatch.com/).
+  ess_backend_destroy_factory_list(backend_list);
 
-* Go on [Bootswatch](https://bootswatch.com/) and choose a theme that you like.
-* Using the top bar, download its `_variables.scss` and `_bootswatch.scss` files.
-* Copy the content of `_variables.scss` in `_sass/_variables.scss`.
-* Copy the content of `_bootswatch.scss` in `_sass/_bootstrap_customization.scss`.
+  //TODO anythings
 
-That's it, you now have a totally different appearance compared to a vanilla Bootstrap 4.
 
-### Modify the content
+  for(;;) { usleep(100000); }
+}
 
-You probably don't want the present guide to be the front page of your website, so you should edit the `index.md` file. You probably also want to edit or delete the `CONTRIBUTING.md`, `README.md` and `LICENSE.md` files.
+```
+_For more examples and usage, please refer to the [Wiki][wiki]
 
-Aside from that you can of course create new pages and posts like with any Jekyll website by refering to the [Jekyll documentation](https://jekyllrb.com/).
+## Current Features (version 0.2-1)
 
-### Run Jekyll on your computer to speed up testing
+* Powerful core that allows for easy to port 
+* Automatic WiFi handling (reconnects, etc.)
+* Powerful socket abscrations layer (SAL)
+* Easy to use platform configuration 
+* Semaphore, task and ringbuffer handling on various platform
+* generic backends: udp, uart and i2s
 
-Editing your website's content or theme directly on Github is completely possible but, due to the time Github Pages takes to update your website, it will probably be much more effective to work using a local Jekyll installation.
+## Progressed features (when ready than version 0.9)
 
-To do so:
+* running example server on esp32 and linux
+* audio mixing from multiple clients
+* MQTT status upport and logging
+* mDNS 
+* code style
 
-* Install the [requirements for Jekyll](https://jekyllrb.com/docs/installation/).
-* Type `bundle install` at the root of your project to install the necessary Ruby dependencies.
-* Type `bundle exec jekyll serve` to launch the test Jekyll web server that will re-compile your work if you edit it.
-* You can then open `http://localhost:4000` in your web browser to see your work-in-progress website.
+## Planned features
 
-Please note that, to ensure maximum compatibility with Github Pages, the `Gemfile` of this project references the `github-pages` gem, not Jekyll directly. This implies some differences in behavior compared to the official documentation of Jekyll.
+* Improve documentation
 
-## Known issues
+* **Suggestions?** Feel free to create an issue and tag it with feature request.
 
-* Bootstrap 4 should normally be post-processed using [Autoprefixer](https://github.com/postcss/autoprefixer). Even if it is possible to use autoprefixer with Jekyll, it is not possible with a classic Github Pages installation without adding some kind of pre-processing before publication. Since this project mostly aims compatibility with Github Pages I prefer to keep it that way. The consequences of this choice is that some Bootstrap features could not work as expected on older browsers.
 
-## How to contribute
+## Release History
 
-[See the contribution guide](https://github.com/nicolas-van/bootstrap-4-github-pages/blob/master/CONTRIBUTING.md).
+* 0.2
+  * rename headers
+  * add platform abstraction layer
+* 0.0.1
+    * Work in progress
 
-## Websites using Bootstrap 4 Github Pages
+[wiki]: https://github.com/RoseLeBlood/openess/wiki
 
-* [My personal blog](https://nicolas-van.github.io/)
-
-## Other projects
-
-[Easy Markdown to Github Pages](https://nicolas-van.github.io/easy-markdown-to-github-pages/) which documents how to publish Markown files to Github Pages in the fastest way.
