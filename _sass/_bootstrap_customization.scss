@@ -1,44 +1,72 @@
-// Darkly 4.2.1
+// Superhero 4.2.1
 // Bootswatch
 
 
 // Variables ===================================================================
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic" !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=Lato:300,400,700" !default;
 @import url($web-font-path);
 
 // Navbar ======================================================================
 
-.bg-primary {
-  .navbar-nav .active > .nav-link {
-    color: $success !important;
-  }
-}
-
-.bg-dark {
-  background-color: $success !important;
-  &.navbar-dark .navbar-nav {
-    .nav-link:focus,
-    .nav-link:hover,
-    .active > .nav-link {
-      color: $primary !important;
-    }
-  }
+.navbar {
+  font-size: $font-size-sm;
 }
 
 // Buttons =====================================================================
 
+.btn {
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
+      } @else {
+        background-color: $value;
+      }
+    }
+  }
+}
+
 // Typography ==================================================================
 
-.blockquote {
-  &-footer {
-    color: $gray-600;
-  }
+.dropdown-menu {
+
+  font-size: $font-size-sm;
+}
+
+.dropdown-header {
+  font-size: $font-size-sm;
+}
+
+.blockquote-footer {
+  color: $body-color;
 }
 
 // Tables ======================================================================
 
 .table {
+  font-size: $font-size-sm;
+
+  .thead-dark th {
+    color: $white;
+  }
+
+  a:not(.btn) {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .text-muted {
+    color: $text-muted;
+  }
+
+  &-dark {
+    color: #fff;
+  }
 
   &-primary {
     &, > th, > td {
@@ -155,46 +183,34 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
 
 // Forms =======================================================================
 
-.input-group-addon {
-  color: #fff;
+label,
+.radio label,
+.checkbox label,
+.help-block {
+  font-size: $font-size-sm;
 }
 
 // Navs ========================================================================
 
 .nav-tabs,
 .nav-pills {
-
   .nav-link,
-  .nav-link.active,
-  .nav-link.active:focus,
-  .nav-link.active:hover,
-  .nav-item.open .nav-link,
-  .nav-item.open .nav-link:focus,
-  .nav-item.open .nav-link:hover {
-    color: #fff;
+  .nav-link:hover {
+    color: $body-color;
+  }
+
+  .nav-link.disabled {
+    color: $nav-link-disabled-color;
   }
 }
 
-.breadcrumb a {
+.page-link:hover,
+.page-link:focus {
   color: #fff;
-}
-
-.pagination {
-  a:hover {
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 
 // Indicators ==================================================================
-
-.close {
-  opacity: 0.4;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
-}
 
 .alert {
   border: none;
@@ -217,21 +233,40 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
   }
 }
 
+.badge {
+  &-warning,
+  &-info {
+    color: $white;
+  }
+}
+
+.close {
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
 // Progress bars ===============================================================
 
 // Containers ==================================================================
 
+.modal {
+  &-header,
+  &-footer {
+    background-color: $table-hover-bg;
 
-.list-group-item-action {
-  color: #fff;
+    .close {
+      color: #fff;
+      text-shadow: none;
+      opacity: 0.5;
 
-  &:hover,
-  &:focus {
-    background-color: $gray-700;
-    color: #fff;
-  }
-
-  .list-group-item-heading {
-    color: #fff;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
   }
 }
