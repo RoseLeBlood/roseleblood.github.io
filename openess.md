@@ -1,7 +1,7 @@
 ---
 layout: page
 title: title: OpenESS Project Page
-permalink: /projekte/openess
+permalink: /openess
 ---
 
 <div>
