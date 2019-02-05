@@ -4,43 +4,30 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
 <h2>Skills</h2>
 
 <ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
+	<li>C/C++ </li>
+	<li>ASM (i386 and ARM (Raspberry PI)</li>
+	<li>C#</li>
+	<li>VB6</li>
+	<li>HTML</li>
 	<li>Git</li>
 	<li>PHP</li>
 	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
+	<li>MySQL</li>
+
 </ul>
 
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+	<li><a href="https://github.com/RoseLeBlood/aSTL">aSTL (another Standard Template Libary (C++))</a></li>
+	<li><a href="https://github.com/RoseLeBlood/openess">OpenESS (Open embedded sound server (C))</a></li>
+	<li><a href="https://github.com/RoseLeBlood/virtualSoC">virtualSoC (C#)</a></li>
+	
+	<li><a href="https://github.com/RoseLeBlood/rasystem">raSystem (Grafik engine DX11 (C/C++))</a></li>
+	<li><a href="https://github.com/RoseLeBlood/crmp">crmp (Classic Ramona Audio Player (my first QT Project))</a></li>
+	<li><a href="https://github.com/RoseLeBlood/csospi">CS/os5 PI = mini Betriebsystem für den PI (C/C++))</a></li>
+	<li><a href="https://github.com/RoseLeBlood/rasystem">raSystem (Grafik engine DX11 (C/C++))</a></li>
 </ul>
