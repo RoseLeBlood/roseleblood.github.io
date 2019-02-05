@@ -34,10 +34,10 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-# facebook:
+facebook: paderrose
 twitter: padersophia
 # google: mygoogle
-# instagram: myinstagram
+instagram: roseleblood.official
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
