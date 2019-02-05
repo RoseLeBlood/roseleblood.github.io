@@ -8,11 +8,11 @@ description: Hobby programming
 # if it's an external image, update below for true
 # better with square images
 external-image: true
-picture: assets/images/profile.jpg
+picture: https://avatars0.githubusercontent.com/u/24764459?s=460&v=4
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
-resume: true
+resume: false
 resume-external: false
 resume-url: https://google.com/?q=my+resume
 
@@ -31,7 +31,7 @@ permalink: /:title/
 # if you don't want comments in your posts, leave categories empty
 disqus:
   shortname: mydisqus # enter this from your disqus account
-  categories: [blog, project] # only show disqus for posts that have these categories
+  categories: [blog, project, openess] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 facebook: paderrose
