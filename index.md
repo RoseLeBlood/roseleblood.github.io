@@ -4,7 +4,7 @@ title: OpenESS Project Page
 ---
 
 <div>
- <img src="https://roseleblood.github.io/openess/Logo-OpenESS.png" width="256" align="left"> 
+ <img src="https://roseleblood.github.io/openess/Logo-OpenESS.png" width="256" align="left">
  <div align="left">
   <h1>Open Embedded Sound Server</h1>
    <h3>
@@ -26,12 +26,12 @@ title: OpenESS Project Page
        Chat
      </a>
    </h3>
-   
+
  </div>
- 
+
 </div>
 
-**OpenESS**  is a network-capable sound server libary mainly for embedded systems and other operatins systems. 
+**OpenESS**  is a network-capable sound server libary mainly for embedded systems and other operatins systems.
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
 
 ## Getting Started
@@ -41,24 +41,24 @@ OpenESS is free and open-source software, and is licensed under the terms of the
 #### PlatformIO
 
 OpenESS is made for use with [platformio](http://platformio.org/), an advanced ecosystem for microcontroller
-development. To get started with coding esphomelib applications, you first have to 
-[install the atom-based platformio IDE](http://platformio.org/platformio-ide) or for advanced users, 
+development. To get started with coding OpenESS applications, you first have to
+[install the atom-based platformio IDE](http://platformio.org/platformio-ide) or for advanced users,
 [install the command line version of platformio](http://docs.platformio.org/en/latest/installation.html).
 
 Then create a new project for an [ESP32-based board](http://docs.platformio.org/en/latest/platforms/espressif32.html#boards)
-(for example, `nodemcu-32s`). Then open up the newly created `platformio.ini` file and insert
+(for example, `esp32doit-devkit-v1`). Then open up the newly created `platformio.ini` file and insert
 
 ```ini
 ; ...
 platform = espressif32
-board = nodemcu-32s
+board = esp32doit-devkit-v1
 framework = esp-idf
 lib_deps = openess
 ```
 Finally, create a new source file in the `src/` folder (for example `main.c`) and start coding with openess.
 
 ## Usage example
-_create the server_ 
+_create the server_
 ```c
 #include "ess.h"
 #include "ess_backend.h"
@@ -80,7 +80,7 @@ extern "C" void app_main() {
 
 
 ```
-_create the audio context_ 
+_create the audio context_
 ```cpp
 #include "ess.h"
 #include "ess_backend.h"
@@ -112,10 +112,9 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 
 ## Current Features (version 0.2-1)
 
-* Powerful core that allows for easy to port 
-* Automatic WiFi handling (reconnects, etc.)
+* Powerful core that allows for easy to port
 * Powerful socket abscrations layer (SAL)
-* Easy to use platform configuration 
+* Easy to use platform configuration
 * Semaphore, task and ringbuffer handling on various platform
 * generic backends: udp, uart and i2s
 
@@ -124,7 +123,7 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 * running example server on esp32 and linux
 * audio mixing from multiple clients
 * MQTT status upport and logging
-* mDNS 
+* mDNS
 * code style
 
 ## Planned features
@@ -143,4 +142,3 @@ _For more examples and usage, please refer to the [Wiki][wiki]
     * Work in progress
 
 [wiki]: https://github.com/RoseLeBlood/openess/wiki
-
