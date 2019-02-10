@@ -2,12 +2,12 @@
 title: ":ramen: Indigo, minimalist jekyll theme"
 layout: post
 date: 2016-01-23 22:10
-tag: jekyll
-image: https://koppl.in/indigo/assets/images/jekyll-logo-light-solid.png
+tag: cpp
+image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "This is a simple and minimalist template for Jekyll for those who likes to eat noodles."
+description: "OpenESS is a small Sound Server for embedded devices"
 category: project
 author: johndoe
 externalLink: false
