@@ -13,11 +13,6 @@ author: johndoe
 externalLink: false
 ---
 
-![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png)
-
-
----
-
 
 **OpenESS**  is a network-capable sound server libary mainly for embedded systems, linux and windows.
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
