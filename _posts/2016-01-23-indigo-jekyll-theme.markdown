@@ -1,7 +1,7 @@
 ---
-title: ":ramen: Indigo, minimalist jekyll theme"
+title: ":ramen: OpenESS Open Embeded Sound Server"
 layout: post
-date: 2016-01-23 22:10
+date: 2019-02-10 22:10
 tag: cpp
 image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: true
@@ -12,10 +12,6 @@ category: project
 author: johndoe
 externalLink: false
 ---
-
-<div>
- <img src="https://roseleblood.github.io/openess/Logo-OpenESS.png" width="256" align="left">
- </div>
 
 ---
 **OpenESS**  is a network-capable sound server libary mainly for embedded systems, linux and windows.
@@ -116,4 +112,5 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 ## Planned features
 
 * Improve documentation
+
 
