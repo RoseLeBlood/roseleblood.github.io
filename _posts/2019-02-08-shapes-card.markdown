@@ -4,7 +4,7 @@ layout: post
 date: 2019-02-08 22:10
 tag: cpp
 image: https://roseleblood.github.io/openess/Logo-OpenESS.png
-headerImage: true
+headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
 description: "Shapes Cards, abgekürzt SCS ist eine abstrakte Bildsprache um sein Befinden auszudrücken"
