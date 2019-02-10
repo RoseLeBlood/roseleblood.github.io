@@ -1,5 +1,5 @@
 ---
-title: ":ramen: OpenESS Open Embeded Sound Server"
+title: ":sound: OpenESS Open Embeded Sound Server"
 layout: post
 date: 2019-02-10 22:10
 tag: cpp
