@@ -15,27 +15,9 @@ externalLink: false
 
 <div>
  <img src="https://roseleblood.github.io/openess/Logo-OpenESS.png" width="256" align="left">
- <div align="center">
-  <h1>Open Embedded Sound Server</h1>
-   <h3>
-     <a href="https://github.com/RoseLeBlood/openess/wiki">
-       Wiki
-     </a>
-     <span> | </span>
-     <a href="https://github.com/RoseLeBlood/openess/blob/master/CONTRIBUTING.md">
-       Contributing
-     </a>
-     <span> | </span>
-     <a href="https://roseleblood.github.io/openess/html/d3/dcc/md__r_e_a_d_m_e.html">
-       Documentation
-     </a>
-   </h3>
-
  </div>
 
-</div>
-
-
+---
 **OpenESS**  is a network-capable sound server libary mainly for embedded systems, linux and windows.
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
 
