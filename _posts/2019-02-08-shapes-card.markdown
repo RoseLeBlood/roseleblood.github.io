@@ -35,3 +35,4 @@ Wenn die Person mag kann Sie dazu was sagen, schreiben, deuten oder malen – je
 Blau hinterlegte Karten (bei bedarf) 
 Es sind jeweils 4 Dreiecke, Rechtecke, Kreise und Striche. Mit denen sich eigene Bilder gelegt werden können. Um Situation darzustellen,  und mit den 42 weißen Karten das innere/äußere Befinden darzustellen, bildhaft darzustellen.  
 
+Link zum der Projektseite: https://github.com/RoseLeBlood/ShapsCards/
