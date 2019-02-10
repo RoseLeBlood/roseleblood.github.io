@@ -9,7 +9,7 @@ projects: true
 hidden: true # don't count this post in blog pagination
 description: "OpenESS is a small Sound Server for embedded devices"
 category: project
-author: johndoe
+author: roseleblood
 externalLink: false
 ---
 
