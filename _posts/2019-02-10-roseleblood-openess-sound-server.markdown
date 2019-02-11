@@ -14,8 +14,11 @@ externalLink: false
 ---
 
 ---
-**OpenESS**  is a network-capable sound server libary mainly for embedded systems, linux and windows.
+
+**OpenESS**  is a network-capable sound server libary mainly for embedded systems and other operatins systems.
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
+
+<a href="https://www.codacy.com/app/RoseLeBlood/openess?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RoseLeBlood/openess&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4f0ba2c68a904b8da2f1d45d5f3596d4"/></a>
 
 ## Getting Started
 
@@ -24,82 +27,57 @@ OpenESS is free and open-source software, and is licensed under the terms of the
 #### PlatformIO
 
 OpenESS is made for use with [platformio](http://platformio.org/), an advanced ecosystem for microcontroller
-development. To get started with coding OpenESS applications, you first have to
+development. To get started with coding esphomelib applications, you first have to
 [install the atom-based platformio IDE](http://platformio.org/platformio-ide) or for advanced users,
 [install the command line version of platformio](http://docs.platformio.org/en/latest/installation.html).
 
 Then create a new project for an [ESP32-based board](http://docs.platformio.org/en/latest/platforms/espressif32.html#boards)
-(for example, `esp32doit-devkit-v1`). Then open up the newly created `platformio.ini` file and insert
+(for example, ` esp32doit-devkit-v1`). Then open up the newly created `platformio.ini` file and insert
 
 ```ini
 ; ...
 platform = espressif32
-board = esp32doit-devkit-v1
+board =  esp32doit-devkit-v1
 framework = esp-idf
 lib_deps = openess
 ```
 Finally, create a new source file in the `src/` folder (for example `main.c`) and start coding with openess.
 
 ## Usage example
-_create the server_
-```c
-#include "ess.h"
-#include "ess_backend.h"
-#include "ess_context.h"
-#include "ess_format.h"
 
-
-
-ess_context_t context;
-ess_backend_facktory_t* backend_list;
-
-extern "C" void app_main() {
-
-  //WORK IN PROGRESSS
-
-
-  for(;;) { usleep(100000); }
-}
-
-
-```
 _create the audio context_
 ```cpp
-#include "ess.h"
-#include "ess_backend.h"
 #include "ess_context.h"
 #include "ess_format.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 
-ess_context_t context;
-ess_backend_facktory_t* backend_list;
+void app_main() {
+  ess_context_t context;
+  ess_context_error_t error;
 
-extern "C" void app_main() {
-  backend_list =ess_backend_create_factory_list();
-
-  ess_backend_probe_all(ESS_FORMAT_STEREO_96000_24,  &backend_list);
-  ess_context_create(&context, ESS_FORMAT_STEREO_96000_24);
-  ess_context_init_ex(&context, &backend_list[0]);
-
-  ess_backend_destroy_factory_list(backend_list);
-
-  //TODO anythings
-
+  error = ess_context_create (&context, ESS_BACKEND_NAME_I2S_ESP32, ESS_FORMAT_STEREO_44100_16);
+  ESS_ERROR(error) ;
 
   for(;;) { usleep(100000); }
 }
+
 
 ```
 _For more examples and usage, please refer to the [Wiki][wiki]
 
-## Current Features (version 0.2-1)
+## Current Features (version 0.3-1)
 
 * Powerful core that allows for easy to port
 * Powerful socket abscrations layer (SAL)
 * Easy to use platform configuration
-* Semaphore, task and ringbuffer handling on various platform
+* mutex, spinlock, task and ringbuffer handling on various platform (current only esp32)
 * generic backends: udp, uart and i2s
+* task are multitaskin safe
+* code style min B
 
 ## Progressed features (when ready than version 0.9)
 
@@ -113,4 +91,18 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 
 * Improve documentation
 
+* **Suggestions?** Feel free to create an issue and tag it with feature request.
 
+
+## Release History
+* 0.3
+  - update platform abstraction layer
+  - add mutex, task and spinlock functions - task using mutex on esp32 platforms
+  - add examples
+* 0.2
+  - rename headers
+  - add platform abstraction layer
+* 0.0.1
+  - Work in progress
+
+[wiki]: https://github.com/RoseLeBlood/openess/wiki
