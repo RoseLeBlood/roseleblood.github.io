@@ -46,7 +46,10 @@ Finally, create a new source file in the `src/` folder (for example `main.c`) an
 ## Usage example
 
 _create the audio context_
-```cpp
+```c
+
+Old C version
+
 #include "ess_context.h"
 #include "ess_format.h"
 
@@ -95,6 +98,10 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 
 
 ## Release History
+* 0.3.3
+  - rename project to OpenESS ++
+  - switch to C++
+  - C++ convert i progress - unstable
 * 0.3
   - update platform abstraction layer
   - add mutex, task and spinlock functions - task using mutex on esp32 platforms
