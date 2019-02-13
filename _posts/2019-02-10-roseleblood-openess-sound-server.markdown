@@ -57,7 +57,7 @@ _create the audio context_
 
 void app_main() {
   ess_context_t context;
-  ess_context_error_t error;
+  ess_error_t error;
 
   error = ess_context_create (&context, ESS_BACKEND_NAME_I2S_ESP32, ESS_FORMAT_STEREO_44100_16);
   ESS_ERROR(error) ;
