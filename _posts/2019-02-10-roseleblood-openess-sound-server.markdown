@@ -64,7 +64,7 @@ _simple create output_
    ess_output_module* i2s_output = ess_platform::Instance().create_output(ESS_OUTPUT_GENERIC_I2S,
      std::string("ess_i2s_controller") );
 
-   std::cout << i2s_output->to_string() << std::endl;
+   std::cout << i2s_output << std::endl;
 
 
    printf("OpenESS is ready to take off \n");
@@ -106,13 +106,13 @@ void app_main() {
   null_input.add_channel("null_left", ESS_AUDIO_CHANNEL_LEFT);
   null_input.add_channel("null_right", ESS_AUDIO_CHANNEL_RIGHT);
 
-  std::cout << i2s_output->to_string() << std::endl;
+  std::cout << i2s_output << std::endl;
 
 
   i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_LEFT, ESS_AUDIO_CHANNEL_RIGHT);
   i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_RIGHT, ESS_AUDIO_CHANNEL_LEFT);
 
-  std::cout << i2s_output->to_string() << std::endl;
+  std::cout << i2s_output << std::endl;
 
   std::cout << "OpenESS is ready to take off" << std::endl;
 
