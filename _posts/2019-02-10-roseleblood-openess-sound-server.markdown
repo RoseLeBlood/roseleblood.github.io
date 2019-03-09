@@ -20,10 +20,16 @@ externalLink: false
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
 
 <a href="https://www.codacy.com/app/RoseLeBlood/openess?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RoseLeBlood/openess&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4f0ba2c68a904b8da2f1d45d5f3596d4"/></a>
+<<<<<<< HEAD
 <img src="https://img.shields.io/github/license/RoseLeBlood/Openess.svg"/>
 <img src="https://img.shields.io/github/last-commit/roseleblood/openess.svg"/>
 <a href="https://twittercom/padersophia">
 <img src="https://img.shields.io/twitter/follow/padersophia.svg"></a>
+=======
+![GitHub](https://img.shields.io/github/license/RoseLeBlood/Openess.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/roseleblood/openess.svg)
+![Twitter Follow](https://img.shields.io/twitter/follow/padersophia.svg)
+>>>>>>> 163289df1c5ed1752bb6f40cb8d5feb10a206b79
 
 ## Getting Started
 
