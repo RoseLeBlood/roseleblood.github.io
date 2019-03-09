@@ -20,7 +20,6 @@ externalLink: false
 OpenESS is free and open-source software, and is licensed under the terms of the GNU Lesser General Public License.
 
 <a href="https://www.codacy.com/app/RoseLeBlood/openess?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RoseLeBlood/openess&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4f0ba2c68a904b8da2f1d45d5f3596d4"/></a>
-
 <img src="https://img.shields.io/github/license/RoseLeBlood/Openess.svg"/>
 <img src="https://img.shields.io/github/last-commit/roseleblood/openess.svg"/>
 <a href="https://twittercom/padersophia">
@@ -60,23 +59,34 @@ _simple create output_
 #include "ess_input_module.h"
 
  void app_main() {
-  ess_platform::Instance().create();
+   ess_platform::Instance().create();
 
-  ess_output_module* i2s_output = ess_platform::Instance().create_output(ESS_OUTPUT_GENERIC_I2S,
-    std::string("ess_i2s_controller") );
+   ess_output_module* i2s_output = ess_platform::Instance().create_output(ESS_OUTPUT_GENERIC_I2S,
+     std::string("ess_i2s_controller") );
 
-  ess_input_module null_input("null_input");
-  null_input.add_channel("null_left", ESS_AUDIO_CHANNEL_LEFT);
-  null_input.add_channel("null_right", ESS_AUDIO_CHANNEL_RIGHT);
+   std::cout << i2s_output->to_string() << std::endl;
 
-  i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_LEFT, ESS_AUDIO_CHANNEL_RIGHT);
-  i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_RIGHT, ESS_AUDIO_CHANNEL_LEFT);
 
-  printf("OpenESS is ready to take off \n");
+   printf("OpenESS is ready to take off \n");
 
-  for(;;) { i2s_output->update();  }
+   for(;;) { i2s_output->update();  }
 }
 
+/* Output:
+
+I (5153) I2S: DMA Malloc info, datalen=blocksize=512, dma_buf_count=3
+I (5153) I2S: DMA Malloc info, datalen=blocksize=512, dma_buf_count=3
+I (5153) I2S: APLL: Req RATE: 48000, real rate: 47999.961, BITS: 16, CLKM: 1, BCK_M: 8, MCLK: 12287990.000, SCLK: 1535998.750000, diva: 1, divb: 0
+I (5173) I2S: APLL: Req RATE: 48000, real rate: 47999.961, BITS: 16, CLKM: 1, BCK_M: 8, MCLK: 12287990.000, SCLK: 1535998.750000, diva: 1, divb: 0
+i2s0:0 inputs:
+-------------------------
+        input: i2s0:0_left(0)
+        input: i2s0:0_right(1)
+-------------------------
+
+OpenESS is ready to take off
+
+*/
 ```
 
 _null output example_
@@ -96,14 +106,38 @@ void app_main() {
   null_input.add_channel("null_left", ESS_AUDIO_CHANNEL_LEFT);
   null_input.add_channel("null_right", ESS_AUDIO_CHANNEL_RIGHT);
 
+  std::cout << i2s_output->to_string() << std::endl;
+
+
   i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_LEFT, ESS_AUDIO_CHANNEL_RIGHT);
   i2s_output->connect(&null_input, ESS_AUDIO_CHANNEL_RIGHT, ESS_AUDIO_CHANNEL_LEFT);
 
-  printf("OpenESS is ready to take off \n");
+  std::cout << i2s_output->to_string() << std::endl;
+
+  std::cout << "OpenESS is ready to take off" << std::endl;
 
   for(;;) { i2s_output->update();  }
 }
+/* Output:
 
+I (5153) I2S: DMA Malloc info, datalen=blocksize=512, dma_buf_count=3
+I (5153) I2S: DMA Malloc info, datalen=blocksize=512, dma_buf_count=3
+I (5153) I2S: APLL: Req RATE: 48000, real rate: 47999.961, BITS: 16, CLKM: 1, BCK_M: 8, MCLK: 12287990.000, SCLK: 1535998.750000, diva: 1, divb: 0
+I (5173) I2S: APLL: Req RATE: 48000, real rate: 47999.961, BITS: 16, CLKM: 1, BCK_M: 8, MCLK: 12287990.000, SCLK: 1535998.750000, diva: 1, divb: 0
+i2s0:0 inputs:
+-------------------------
+        input: i2s0:0_left(0)
+        input: i2s0:0_right(1)
+-------------------------
+i2s0:0 inputs:
+-------------------------
+        input: i2s0:0_left(0) <- output: null_right(1)
+        input: i2s0:0_right(1) <- output: null_left(0)
+-------------------------
+
+OpenESS is ready to take off
+
+*/
 ```
 _For more examples and usage, please refer to the [Wiki][wiki]
 
