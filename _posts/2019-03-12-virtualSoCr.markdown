@@ -2,7 +2,7 @@
 title: "virtual SoC "
 layout: post
 date: 2019-03-12 17:49
-tag: c#, mono. assembler
+tag: csharp
 image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: false
 projects: true

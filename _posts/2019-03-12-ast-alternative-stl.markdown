@@ -2,7 +2,7 @@
 title: "alternative STL"
 layout: post
 date: 2019-03-12 17:49
-tag: cpp, template, stl
+tag: cpp
 image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: false
 projects: true
