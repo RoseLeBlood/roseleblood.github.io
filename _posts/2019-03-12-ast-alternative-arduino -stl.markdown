@@ -10,7 +10,7 @@ hidden: true # don't count this post in blog pagination
 description: "fast and other STL Arduino Port"
 category: project
 author: roseleblood
-externalLink: true
+externalLink: false
 ---
 
 ---

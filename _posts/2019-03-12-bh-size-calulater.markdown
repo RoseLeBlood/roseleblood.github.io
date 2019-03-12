@@ -1,7 +1,7 @@
 ---
 title: ":love: BH Size Calculator  [DE]"
 layout: post
-date: 2019-03-12 17:49
+date: 2019-03-12 18:00
 tag: csharp
 image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: false
@@ -10,7 +10,7 @@ hidden: true # don't count this post in blog pagination
 description: "kleines Tool zum Berechnen der BH Größe"
 category: project
 author: roseleblood
-externalLink: true
+externalLink: false
 ---
 
 ---
