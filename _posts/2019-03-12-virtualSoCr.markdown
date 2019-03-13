@@ -1,5 +1,5 @@
 ---
-title: "virtual SoC "
+title: ":shell: virtual SoC with instructionset"
 layout: post
 date: 2019-03-12 17:00
 tag: csharp
