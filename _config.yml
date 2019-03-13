@@ -7,8 +7,8 @@ description: ""
 
 # if it's an external image, update below for true
 # better with square images
-external-image: true
-picture: https://avatars0.githubusercontent.com/u/24764459?s=460&v=4
+external-image: false
+picture: assets/images/profile.jpeg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
