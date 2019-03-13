@@ -1,5 +1,5 @@
 ---
-title: ":love: BH Size Calculator  [DE]"
+title: ":girl: BH Size Calculator  [DE]"
 layout: post
 date: 2019-03-08 18:00
 tag: csharp

@@ -1,5 +1,5 @@
 ---
-title: "alternative STL"
+title: ":bug: alternative STL"
 layout: post
 date: 2019-03-11 18:15
 tag: cpp
@@ -7,7 +7,7 @@ image: https://roseleblood.github.io/openess/Logo-OpenESS.png
 headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "fast and other STL for varios platform with Arduino Port"
+description: "fast and alternative STL implantations for varios platform"
 category: project
 author: roseleblood
 externalLink: false

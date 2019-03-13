@@ -1,5 +1,5 @@
 ---
-title: "alternative STL Arduino port"
+title: ":bug: alternative STL Arduino port"
 layout: post
 date: 2019-03-10 17:49
 tag: Arduino
