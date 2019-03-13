@@ -21,11 +21,15 @@ layout: page
 
 <h2>Projects</h2>
 
-<ul>
-	<li><a href="https://github.com/RoseLeBlood/aSTL">aSTL (another Standard Template Libary (C++))</a></li>
-	<li><a href="https://github.com/RoseLeBlood/openess">OpenESS (Open embedded sound server (C))</a></li>
-	<li><a href="https://github.com/RoseLeBlood/virtualSoC">virtualSoC (C#)</a></li>
-	<li><a href="https://github.com/RoseLeBlood/rasystem">raSystem (Grafik engine DX11 (C/C++))</a></li>
-	<li><a href="https://github.com/RoseLeBlood/crmp">crmp (Classic Ramona Audio Player (my first QT Project))</a></li>
-	<li><a href="https://github.com/RoseLeBlood/csospi">CS/os5 PI = mini Betriebsystem für den PI (C/C++))</a></li>
-</ul>
+<section class="list">
+    {% for post in site.posts %}
+        {% if post.projects %}
+            <div class="item {% if post.star %}star{% endif %}">
+                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
+                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                    <h3 class="title">{{ post.title }}</h3>
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
