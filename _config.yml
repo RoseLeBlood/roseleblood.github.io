@@ -41,7 +41,7 @@ instagram: roseleblood.official
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
-# spotify: myspotify
+spotify: roseleblood
 github: roseleblood
 # gitlab: mygitlab
 # lastfm: mylastfm
@@ -57,8 +57,8 @@ authors:
     roseleblood:
         name: Anna_Sophia Schröck
         bio: ""
-        external-image: false
-        picture:
+        external-image: true
+        picture: https://avatars0.githubusercontent.com/u/24764459?s=460&v=4
         twitter: padersophia
 
 # do you want a larger site? change the option below
