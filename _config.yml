@@ -3,12 +3,12 @@ name: Anna_Sophia Schröck
 bio: Hobby programming
 
 # twitter summary info
-description: "german hobby programming since 2004"
+description: ""
 
 # if it's an external image, update below for true
 # better with square images
-external-image: false
-picture: assets/images/profile.jpeg
+external-image: true
+picture: https://avatars0.githubusercontent.com/u/24764459?s=460&v=4
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
@@ -41,7 +41,7 @@ instagram: roseleblood.official
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
-spotify: roseleblood
+# spotify: myspotify
 github: roseleblood
 # gitlab: mygitlab
 # lastfm: mylastfm
@@ -58,7 +58,7 @@ authors:
         name: Anna_Sophia Schröck
         bio: ""
         external-image: false
-        picture: assets/images/profile.jpeg
+        picture:
         twitter: padersophia
 
 # do you want a larger site? change the option below
