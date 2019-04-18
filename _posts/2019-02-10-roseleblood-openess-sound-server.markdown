@@ -168,6 +168,39 @@ _For more examples and usage, please refer to the [Wiki][wiki]
 
 
 ## Release History
+## Release History
+* 0.8.10:
+  - add ess_error_t ess_task::start(uint32_t core)
+  - add ess_audio_block_t
+  - update read functions in channel and modules virtual unsigned int  read(ess_audioblock_t *block, unsigned int offset)
+  - add memory map for ess_audio_block_t
+  - add new configs:
+    - ESS_MAX_AUDIO_MEMORY 163840,
+    - ESS_MEMORY_MAP_DEBUG
+    - ESS_PLATFORM_MONTORING 1 /**< when set then useble get_cpu_max and get_cpu_load*/
+* 0.8.01:
+  - add  class ess_stereo_simple_buffer_output_module
+    mix floated audio data to a simple integer buffer stereo
+  - ess_esp32i2s_output_module changes:
+    basic class ess_stereo_simple_buffer_output_module
+    ess_esp32uart_output_module changes:
+      basic class ess_stereo_simple_buffer_output_module
+  - add class ess_system_format:
+    static class holder for formart handling
+  - ess_platform_esp32 remove:
+    get_bits, get_samplerate, get_channels functions and move it to ess_system_format
+  - ess_format add:
+      ess_format_from_string(const char*)
+      remove issus
+  - ess_i2s_controller esp32:
+      remove issus
+      get_format
+  - ess_format_t add:
+      2.1, Quad , 5.1, 7.1 Formats
+* 0.8.00:
+  - add udplite output module
+  - start esp32 refecrence implantierung (private git - public in the future)
+  - version update to 0.8
 * 0.6.04:
   - remove TeensyAudioLibrary
   - add very flexible audio system
