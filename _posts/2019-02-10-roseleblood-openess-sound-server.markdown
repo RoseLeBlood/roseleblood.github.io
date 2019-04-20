@@ -32,7 +32,7 @@ OpenESS is free and open-source software, and is licensed under the terms of the
 
 #### PlatformIO
 
-OpenESS++ is made for use with [platformio](http://platformio.org/), an advanced ecosystem for microcontroller
+OpenESS is made for use with [platformio](http://platformio.org/), an advanced ecosystem for microcontroller
 development. To get started with coding esphomelib applications, you first have to
 [install the atom-based platformio IDE](http://platformio.org/platformio-ide) or for advanced users,
 [install the command line version of platformio](http://docs.platformio.org/en/latest/installation.html).
